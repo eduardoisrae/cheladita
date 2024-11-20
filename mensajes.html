@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <title>Dashboard de Órdenes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            padding: 2rem;
+        }
+
+
+
+
+
+
+
+
+
+                .button-container {
+            display: flex;
+            gap: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        }
+        
+        .button {
+            padding: 15px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+        
+        .button:hover::before {
+            left: 100%;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background-color: #333;
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+
+        /* Iconos para los botones */
+        .button::after {
+            font-family: Arial;
+            margin-left: 8px;
+        }
+
+        .button-message::after {
+            content: "📋";
+        }
+
+        .button-exit::after {
+            content: "↪";
+        }
+    </style>
+</head>
+<body class="bg-gray-100 h-screen">
+<div class="flex h-full">
+    <!-- Sidebar -->
+    <div class="w-64 bg-black text-white p-6 space-y-6">
+        <div class="text-xl font-bold">Panel Admin</div>
+        <nav class="space-y-4">
+            <a href="#" class="block py-2.5 px-4 rounded bg-gray-800" onclick="showInbox(); return false">Bandeja de entrada</a>
+            
+        </nav>
+    </div>
+
+<!-- Main Content -->
+<div class="flex-1 p-8">
+    <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+        <!-- Inbox Section -->
+        <div id="inboxSection">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold">Bandeja de entrada</h1>
+            </div>
+
+            <!-- Email List -->
+            <div class="space-y-4 mb-6" id="emailList">
+                <!-- Los correos se insertarán dinámicamente aquí -->
+            </div>
+
+            <button type="submit" class="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800" onclick="verDetalles()">Ver</button>
+        </div>
+    </div>
+</div>
+
+<!-- Detalles del correo -->
+<div id="emailDetails" class="hidden">
+    <div id="correo-1"></div>
+    <div id="mensaje-1"></div>
+    
+</div>
+
+
+</div>
+
+
+               
+
+     <div class="button-container">
+        <a href="manager.html" class="button button-message">Ordenes</a>
+        <a href="index.html" class="button button-exit">Salir</a>
+    </div>
+
+
+
+
+<script>
+  // Cargar los mensajes al iniciar
+function cargarMensajes() {
+    fetch('obtener_mensajes.php')  // Solicitar al archivo PHP que obtenga los mensajes
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Limpiar el contenedor de la lista de correos
+                const emailList = document.getElementById('emailList');
+                emailList.innerHTML = '';
+
+                // Insertar los mensajes
+                data.mensajes.forEach(mensaje => {
+                    const emailItem = document.createElement('div');
+                    emailItem.className = 'flex items-center p-4 border rounded-lg hover:bg-gray-50 cursor-pointer';
+                    emailItem.setAttribute('data-id', mensaje.id_mensaje);  // Usamos el id_mensaje
+                    emailItem.setAttribute('onclick', `showEmailContent(${mensaje.id_mensaje})`);  // Al hacer clic, pasa el id_mensaje
+                    emailItem.innerHTML = `
+                        <div class="flex-1">
+                            <div class="flex justify-between">
+                                <span class="font-semibold" id="correo-${mensaje.id_mensaje}">${mensaje.correo}</span>
+                            </div>
+                            <div class="text-gray-600" id="mensaje-${mensaje.id_mensaje}">${mensaje.contenido_correo}</div>
+                        </div>
+                    `;
+                    emailList.appendChild(emailItem);
+                });
+            } else {
+                console.error('Error al cargar los mensajes:', data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al conectar con el servidor');
+        });
+}
+
+// Mostrar el contenido del correo
+function showEmailContent(id) {
+    const correo = document.getElementById(`correo-${id}`).textContent;
+    const mensaje = document.getElementById(`mensaje-${id}`).textContent;
+
+    // Mostrar los detalles en la sección de detalles
+    document.getElementById('correo-1').textContent = correo;
+    document.getElementById('mensaje-1').textContent = mensaje;
+
+    // Mostrar la sección de detalles
+    document.getElementById('emailDetails').classList.remove('hidden');
+}
+
+// Función para manejar el botón "ver"
+function verDetalles() {
+    // Puedes agregar lógica si deseas hacer algo al presionar el botón "ver"
+    alert('Detalles mostrados correctamente.');
+}
+
+// Cargar los mensajes cuando la página se carga
+window.onload = cargarMensajes;
+
+</script>
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+2024-11-20 03:37:21 - Datos recibidos: {"id_usuario":1,"total":"$144.00","nombre":"EDUARDO ISRAEL REYNOSO CONTRERAS","direccion":"Delegacion Gustavo A. Madero Colonia Lindavista Vallejo","telefono":"5510130140","pedido":"Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)"}
+2024-11-20 03:37:21 - Valores procesados:
+2024-11-20 03:37:21 - nombre: EDUARDO ISRAEL REYNOSO CONTRERAS
+2024-11-20 03:37:21 - telefono: 5510130140
+2024-11-20 03:37:21 - direccion: Delegacion Gustavo A. Madero Colonia Lindavista Vallejo
+2024-11-20 03:37:21 - total: 0
+2024-11-20 03:37:21 - pedido: Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)
+2024-11-20 03:37:21 - id_usuario: 1
+2024-11-20 03:37:21 - Validación fallida - campos vacíos o total <= 0
+2024-11-20 03:42:03 - Datos recibidos: {"id_usuario":1,"total":"$144.00","nombre":"EDUARDO ISRAEL REYNOSO CONTRERAS","direccion":"Delegacion Gustavo A. Madero Colonia Lindavista Vallejo","telefono":"5510130140","pedido":"Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)"}
+2024-11-20 03:42:03 - Valores procesados:
+2024-11-20 03:42:03 - nombre: EDUARDO ISRAEL REYNOSO CONTRERAS
+2024-11-20 03:42:03 - telefono: 5510130140
+2024-11-20 03:42:03 - direccion: Delegacion Gustavo A. Madero Colonia Lindavista Vallejo
+2024-11-20 03:42:03 - total: 0
+2024-11-20 03:42:03 - pedido: Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)
+2024-11-20 03:42:03 - id_usuario: 1
+2024-11-20 03:42:03 - Validación fallida - campos vacíos o total <= 0
+2024-11-20 03:42:10 - Datos recibidos: {"id_usuario":1,"total":"$144.00","nombre":"EDUARDO ISRAEL REYNOSO CONTRERAS","direccion":"Delegacion Gustavo A. Madero Colonia Lindavista Vallejo","telefono":"5510130140","pedido":"Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)"}
+2024-11-20 03:42:10 - Valores procesados:
+2024-11-20 03:42:10 - nombre: EDUARDO ISRAEL REYNOSO CONTRERAS
+2024-11-20 03:42:10 - telefono: 5510130140
+2024-11-20 03:42:10 - direccion: Delegacion Gustavo A. Madero Colonia Lindavista Vallejo
+2024-11-20 03:42:10 - total: 0
+2024-11-20 03:42:10 - pedido: Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)
+2024-11-20 03:42:10 - id_usuario: 1
+2024-11-20 03:42:10 - Validación fallida - campos vacíos o total <= 0
+2024-11-20 03:44:15 - Datos recibidos: {"id_usuario":1,"total":144,"nombre":"EDUARDO ISRAEL REYNOSO CONTRERAS","direccion":"san cosme","telefono":"5510130140","pedido":"Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)"}
+2024-11-20 03:44:15 - Valores procesados:
+2024-11-20 03:44:15 - nombre: EDUARDO ISRAEL REYNOSO CONTRERAS
+2024-11-20 03:44:15 - telefono: 5510130140
+2024-11-20 03:44:15 - direccion: san cosme
+2024-11-20 03:44:15 - total: 144
+2024-11-20 03:44:15 - pedido: Nachos Preparados (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00)
+2024-11-20 03:44:15 - id_usuario: 1
+2024-11-20 03:44:15 - Inserción exitosa. ID: 7
+2024-11-20 04:11:53 - Datos recibidos: {"id_usuario":1,"total":268,"nombre":"EDUARDO ISRAEL REYNOSO CONTRERAS","direccion":"calle guadalajara","telefono":"5510130140","pedido":"Papas a la Francesa (300gr) (Cantidad: 1, Precio: $49.00), Alitas (8 pzas) (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00), Hamburguesa de Res (Cantidad: 1, Precio: $75.00)"}
+2024-11-20 04:11:53 - Valores procesados:
+2024-11-20 04:11:53 - nombre: EDUARDO ISRAEL REYNOSO CONTRERAS
+2024-11-20 04:11:53 - telefono: 5510130140
+2024-11-20 04:11:53 - direccion: calle guadalajara
+2024-11-20 04:11:53 - total: 268
+2024-11-20 04:11:53 - pedido: Papas a la Francesa (300gr) (Cantidad: 1, Precio: $49.00), Alitas (8 pzas) (Cantidad: 1, Precio: $75.00), Aros de Cebolla (Cantidad: 1, Precio: $69.00), Hamburguesa de Res (Cantidad: 1, Precio: $75.00)
+2024-11-20 04:11:53 - id_usuario: 1
+2024-11-20 04:11:53 - Inserción exitosa. ID: 8
